@@ -1,0 +1,145 @@
+.footerContainer {
+  width: 90vw;
+  margin: 0 auto;
+
+  padding: 3rem;
+  background-color: #000;
+}
+.downloadSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5rem;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+  /* 
+  
+  
+  
+  /*
+  background-color: aqua; */
+}
+
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.downloadBtnText {
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+  padding: 2rem 0;
+}
+
+.downloadBtn > svg {
+  display: block;
+}
+
+.downloadBtnText > span {
+  display: block;
+}
+
+.footerContentsSection {
+  width: 90vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+  column-gap: 2rem;
+
+  padding: 2rem 0;
+}
+
+.footerAboutTitle {
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-size: 18px;
+}
+
+.footerAbout > :nth-child(1) {
+  font-weight: bold;
+}
+
+.footerAbout .footerAboutList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.5rem;
+}
+
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footerRight > h2 {
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.footerEmail {
+  text-align: left;
+}
+
+.footerInput {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 5px;
+  padding: 5px 0;
+}
+
+.footerInput > input {
+  padding: 15px 5px;
+  background-color: #fff;
+  color: gray;
+  border: none;
+  border-radius: 5px;
+
+  font-size: 17px;
+}
+
+.footerInput > button {
+  background-color: #fff;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: #000;
+  border: 2px solid #fff;
+  border-radius: 80px;
+}
+
+.footerCopyRight {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+  border-top: 2px solid #fff;
+}
+
+.footerleft {
+  font-size: 13px;
+  text-align: left;
+}
+
+.footerleft > :nth-child(2) {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
+
+.footerleft > :nth-child(3) {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
+
+.footerRight {
+  display: inline;
+}
+
+.footerRight > svg {
+  margin: 0 5px;
+}

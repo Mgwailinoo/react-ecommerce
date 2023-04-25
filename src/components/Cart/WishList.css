@@ -1,0 +1,10 @@
+.wishListBox {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 5rem 0 3rem 0;
+}
+
+.noWishListBox {
+  padding: 5rem 0 3rem 0;
+}

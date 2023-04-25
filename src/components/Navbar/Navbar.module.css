@@ -1,0 +1,51 @@
+.navContainer {
+  position: fixed;
+  background-color: #4c4c4c;
+  width: 100vw;
+  padding: 5px;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+.logoText {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 24px;
+  color: #fff;
+}
+.logoText span {
+  font-weight: 400;
+}
+.navLinkContainer ul {
+  display: flex;
+  list-style-type: none;
+}
+.navLinkContainer ul li {
+  padding: 10px;
+  color: #fff;
+}
+.navLinkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartBtn {
+  display: block;
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+}
+
+.cartBadge {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  background-color: #fff;
+  color: palevioletred;
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 2px 4px;
+  line-height: 1;
+  font-weight: 800;
+}

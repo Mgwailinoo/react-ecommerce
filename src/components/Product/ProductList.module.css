@@ -1,0 +1,29 @@
+.menus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  gap: 2rem;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  list-style-type: none;
+  padding: 3rem 0;
+}
+
+.menus > li:hover {
+  color: skyblue;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  height: 100%;
+
+  gap: 3rem;
+  justify-content: space-between;
+  padding: 3rem;
+  background: #fff;
+}
