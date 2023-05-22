@@ -50,7 +50,7 @@ const SingleProduct = (props) => {
         </div>
 
         <div className={styles.icon}>
-          <Link to="/detailProduct/1" style={{ color: "#000" }}>
+          <Link to={`/detailProduct/${id}`} style={{ color: "#000" }}>
             <SearchOutlined cartItemAmount={cartItemAmount} />
           </Link>
         </div>

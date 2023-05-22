@@ -20,7 +20,8 @@ const DetailProduct = (props) => {
   const [show, setShow] = useState(false);
   const products = ProductsDetail;
   let { id } = useParams();
-
+  id = parseInt(id);
+  const product = PRODUCTS.find((item) => item.id === id);
   const {
     cartItems,
     addToCart,
@@ -40,7 +41,7 @@ const DetailProduct = (props) => {
           <div className={styles.details}>
             <div className={styles.leftBox}>
               <div className={styles.bigImg}>
-                <img src={item.src[img]} alt="" />
+                <img src={product.img} alt="" />
               </div>
               <div className={styles.thumb}>
                 {item.src.map((img, index) => (
@@ -58,7 +59,7 @@ const DetailProduct = (props) => {
             <div className={styles.rightBox}>
               <div className={styles.row}>
                 <h2>{item.details}</h2>
-                <span>{item.price}$</span>
+                <span>{product.price}$</span>
               </div>
               <div className={styles.colors}>
                 {item.colors.map((color, index) => (

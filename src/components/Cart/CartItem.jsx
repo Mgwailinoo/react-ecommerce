@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../../Context/ProductContext";
 import "./Cart.css";
-
+import { ProductsList as PRODUCTS } from "../../data/products";
 export const CartItem = (props) => {
   const { id, name, details, price, img } = props.data;
 
@@ -23,7 +23,12 @@ export const CartItem = (props) => {
               <div>
                 <h3>{name}</h3>
                 <p>{details}</p>
-                <button className="btn-remove">Remove</button>
+                {/* <button
+                  onClick={() => deleteFromCart(id)}
+                  className="btn-remove"
+                >
+                  Remove
+                </button> */}
               </div>
             </div>
             <div className="cart-product-price">${price}</div>
