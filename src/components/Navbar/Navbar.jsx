@@ -6,12 +6,13 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { ProductContext } from "../../Context/ProductContext";
 import Box from "@mui/material/Box";
-
+import userProfile from "../../assets/profile1.png";
 import Modal from "@mui/material/Modal";
 
 import { menuItems } from "./MenuItem";
 import Login from "../../page/Login";
 import SignUp from "../../page/SignUp";
+import { useLoginContext } from "../../Context/LoginContext";
 
 const style = {
   position: "absolute",
@@ -28,7 +29,7 @@ const style = {
 function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [openBox, setOpenBox] = React.useState(false);
-
+  const { loggedIn, setLoggedIn } = useLoginContext();
   const handleOpenBox = () => setOpenBox(true);
   const handleCloseBox = () => setOpenBox(false);
   const { getTotalCart, wishlist } = useContext(ProductContext);
@@ -39,6 +40,17 @@ function Navbar() {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "#000",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
   };
 
   return (
@@ -126,29 +138,41 @@ function Navbar() {
                 </Link>
                 <span className={styles.cartBadge}>{totalCart}</span>
               </span>
-              <span onClick={handleOpenBox}>
-                <span style={{ padding: "10px" }}>
-                  <svg
-                    fill="#fff"
-                    width="20px"
-                    height="20px"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                  >
-                    <path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z" />
-                  </svg>
-                </span>
-              </span>
-              <Modal
-                open={openBox}
-                onClose={handleCloseBox}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <Box sx={style}>
-                  <Login />
-                </Box>
-              </Modal>
+
+              <>
+                {!loggedIn ? (
+                  <>
+                    {" "}
+                    <span onClick={handleOpenBox}>
+                      <span style={{ padding: "10px" }}>
+                        <svg
+                          fill="#fff"
+                          width="20px"
+                          height="20px"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                        >
+                          <path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z" />
+                        </svg>
+                      </span>
+                    </span>
+                    <Modal
+                      open={openBox}
+                      onClose={handleCloseBox}
+                      aria-labelledby="modal-modal-title"
+                      aria-describedby="modal-modal-description"
+                    >
+                      <Box sx={style}>
+                        <Login />
+                      </Box>
+                    </Modal>
+                  </>
+                ) : (
+                  <div className={styles.userProfile}>
+                    <img src={userProfile} className={styles.userImg} />
+                  </div>
+                )}
+              </>
             </div>
           </div>
         </div>
